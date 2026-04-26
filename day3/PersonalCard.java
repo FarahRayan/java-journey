@@ -9,5 +9,11 @@ public class PersonalCard {
         String name = input.nextLine();
         System.out.println("enter your age");
         int age = input.nextInt();
+
+        System.out.println("  Developer Card");
+
+        System.out.println("  Name    : " + name);
+System.out.println("age :" + age);
     }
+
 }
