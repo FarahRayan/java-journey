@@ -1,51 +1,42 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Calculater {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
+/* int x = 1 , y;
+y = ++x;
+System.out.println(y);
+        int k = 5;
+        k = k + 10;
+        k += 10;*/
+        System.out.println("Enter equation");
+        String equation = input.nextLine();
+        String[] parts = equation.split(" ");
+   double num1 =Double.parseDouble(parts[0]);
+   String op = parts[1];
+Double num2 = Double.parseDouble(parts[2]);
+        double result = 0;
 
-        System.out.print("Enter first number: ");
-        double num1 = input.nextDouble();
-
-        System.out.print("Enter operator (+, -, *, /): ");
-        char op = input.next().charAt(0);
-
-        System.out.print("Enter second number: ");
-        double num2 = input.nextDouble();
-
-        double result;
-
-        switch (op) {
-            case '+':
+        switch (op){
+            case "+":
                 result = num1 + num2;
-                System.out.println("Result: " + result);
                 break;
-
-              case '-':
-                result = num1 - num2;
-                System.out.println( result);
+            case "-":
+                result = num1 + num2;
                 break;
-
-            case '*':
+            case  "*":
                 result = num1 * num2;
-                System.out.println( result);
                 break;
 
-            case '/':
-                if (num2 != 0) {
-                    result = num1 / num2;
-                    System.out.println("Result: " + result);
-                }
-                else {
-                    System.out.println("Error: Cannot divide by zero");
-                    }
+            case "/":
+                result = num1 / num2;
                 break;
 
-            default:
-                System.out.println("Invalid operator");
         }
+        System.out.println("Result = " + result);
 
-        input.close();
+
     }
 }
